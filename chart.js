@@ -13,9 +13,28 @@ const customerChart = new Chart(ctx, {
         }]
     },
     options: {
+        responsive: true, // Enable responsiveness
+        maintainAspectRatio: false, // Allow the chart to adjust its aspect ratio
         scales: {
             y: {
                 beginAtZero: true
+            }
+        },
+        plugins: {
+            legend: {
+                display: true,
+                position: 'top', // Position of the legend
+            },
+            tooltip: {
+                enabled: true, // Enable tooltips
+            }
+        },
+        layout: {
+            padding: {
+                top: 10,
+                right: 10,
+                bottom: 10,
+                left: 10
             }
         }
     }
