@@ -1,0 +1,320 @@
+/* Global Styles */
+body {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+                url('background1.jpg') no-repeat center/cover fixed;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --blue: #2a2185;
+    --white: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+}
+
+/* Sidebar */
+.navigation {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--blue);
+    border-left: 10px solid var(--blue);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.navigation.active {
+    width: 80px;
+}
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.navigation ul li:hover,
+.navigation ul li.hovered {
+    background-color: var(--white);
+}
+
+.navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.navigation ul li:hover a,
+.navigation ul li.hovered a {
+    color: var(--blue);
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 75px;
+    text-align: center;
+}
+
+.navigation ul li a .icon ion-icon {
+    font-size: 1.75rem;
+}
+
+.navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+/* Main Content */
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5s;
+}
+
+.main.active {
+    width: calc(100% - 80px);
+    left: 80px;
+}
+
+/* Toggle Button */
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: var(--blue);
+}
+
+/* CardBox */
+.cardBox {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 30px;
+}
+
+.cardBox .card {
+    position: relative;
+    background: var(--white);
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.38);
+    height: 120px;
+}
+
+.cardBox .card .numbers {
+    position: relative;
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: var(--blue);
+    text-align: center;
+}
+
+.cardBox .card .cardname {
+    color: var(--black2);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.cardBox .card .iconbx {
+    font-size: 2rem;
+    color: var(--black2);
+    text-align: center;
+}
+
+.cardBox .card:hover {
+    background: var(--blue);
+}
+
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardname,
+.cardBox .card:hover .iconbx {
+    color: var(--white);
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}
+
+/* Form Styling */
+.form-card {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-card h2 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.form-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-card form label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-card form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-card form button {
+    padding: 10px;
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.form-card form button:hover {
+    background-color: #1a1464;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: var(--blue);
+    color: white;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+table button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+table button:hover {
+    background-color: #1a1464;
+}
+
+/* Filter Container */
+.filter-container {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+#filterInputCustomer {
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#filterDropdownCustomer {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .cardBox {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .cardBox {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .cardBox {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cardBox .card {
+        padding: 10px;
+        height: 100px;
+    }
+
+    .cardBox .card .numbers {
+        font-size: 1.5rem;
+    }
+
+    .cardBox .card .iconbx {
+        font-size: 1.8rem;
+    }
+}
